@@ -3,6 +3,12 @@
 <head>
   <title>Cписок Студентов</title>
   <link href="styles/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css_final.css">
+  <script src="./filter.js"></script>
+  <title>Fixed table</title>
 <style>
 .btn-group button {
   background-color: rgb(0,0,0,0); /* Green background */
@@ -76,7 +82,7 @@ text-align:center;}
 <body>
 <header>
 <a href="https://inai.kg/"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Finai.kg%2Fogassets%2Fog-image.jpg&f=1&nofb=1&ipt=b3a45056c6bb49c42fef8fa79149ec728cfc8dc4da31188ac4ea1291b72dab68&ipo=images" width="100" height="100"></a><a href="https://www.daad.de/de/"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Finai.kg%2Fuploads%2Fposts%2Ftinymce%2Fimg_WEwoU2xUZI_27-02-2020.jpg&f=1&nofb=1&ipt=28b6fa2854ff817ff2e68f53edef7226a53a268a65c9199ea7811be9ad5f4be9&ipo=images" width="600" height="100"></a><a href="http://127.0.0.1:8000/admin/login/?next=/admin/"><input type="button" value="Admin-site" class="right"></a>
-  <div class="btn-group"><a href="http://127.0.0.1:8000/data/"><h2><button>Главная</button></h2></a><h2><a href="/main_spisok/"><button>Список</button></a></h2> <a href="/news_list/"><h2><button>Новости</button></h2></a> </div>
+  <div class="btn-group"><a href="/main_page/"><h2><button>Главная</button></h2></a><h2><a href="/main_spisok/"><button>Список</button></a></h2> <a href="/news_list/"><h2><button>Новости</button></h2></a> </div>
   <br>
   <br>
   <br>
@@ -84,10 +90,8 @@ text-align:center;}
   <br>
   <br>
 </header>
-
 <h2 class="glow">Список студентов INAI.KG</h2>
 <div class="container">
-  {{MyFilter.form}}
   <h2 class="text-center"><u></u></h2><br>
   <table class="table table-dark table-striped">
     <thead>

@@ -26,3 +26,8 @@ def view_news(request):
 def news(request, id):
     news = get_object_or_404(models.News, id=id)
     return render(request, 'news.html', {'news': news})
+
+
+def main(request):
+    data = models.News.objects.all()
+    return render(request, 'main_page.html', {'data': data})
