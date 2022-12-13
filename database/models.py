@@ -1,4 +1,6 @@
 from django.db import models
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import generics
 
 
 # Create your models here.
@@ -14,7 +16,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     image = models.ImageField(upload_to='')
-    group = models.CharField(choices=GROUPS, max_length=100)
+    group = models.CharField(choices=GROUPS, max_length=100, null=True)
 
 
 class News(models.Model):

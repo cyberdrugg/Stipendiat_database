@@ -1,27 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 
 from database import models
+from database.filters import StudentFilter
 
 
 # Create your views here.
 def spisok(request):
     data = models.Student.objects.all()
-    return render(request, 'main_spisok.html', {'data': data})
+    MyFilter = StudentFilter(request.GET, queryset=data)
+    data = MyFilter.qs
+    context = {'data': data, 'MyFilter': MyFilter}
+    return render(request, 'main_spisok.html', context)
 
 
 def view_student(request, id):
     data = get_object_or_404(models.Student, id=id)
     return render(request, 'profile.html', {'data': data})
-
-
-from django.shortcuts import render
-from django_table_sort.table import TableSort
-from database.models import Student
-
-
-def view(request):
-    data = TableSort(request, Student.objects.all())
-    return render(request, "main_spisok.html", context={'data': data})
 
 
 def view_news(request):
