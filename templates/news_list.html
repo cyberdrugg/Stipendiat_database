@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Новости</title>
+<body>
+<header>
+    <!DOCTYPE html>
+  <link href="styles/style.css" rel="stylesheet" />
+<style>
+.btn-group button {
+  background-color: rgb(0,0,0,0); /* Green background */
+  border: 1px solid green; /* Green border */
+  color: Black; /* White text */
+  padding: 50px 75px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: rgba(65,105,225);
+}
+
+.glow {
+  font-size: 50px;
+  color: blue;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  float: center;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan;
+  }
+
+  to {
+    text-shadow: 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan, 0 0 80px cyan;
+  }
+}
+input.right {
+        float: right;
+        background-color: cyan
+      }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+header{background-color:white;
+}
+
+footer{background-color:DodgerBlue;
+color: black;
+text-align:center;}
+
+</style>
+
+<a href="https://inai.kg/"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Finai.kg%2Fogassets%2Fog-image.jpg&f=1&nofb=1&ipt=b3a45056c6bb49c42fef8fa79149ec728cfc8dc4da31188ac4ea1291b72dab68&ipo=images" width="100" height="100"></a><a href="https://www.daad.de/de/"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Finai.kg%2Fuploads%2Fposts%2Ftinymce%2Fimg_WEwoU2xUZI_27-02-2020.jpg&f=1&nofb=1&ipt=28b6fa2854ff817ff2e68f53edef7226a53a268a65c9199ea7811be9ad5f4be9&ipo=images" width="600" height="100"></a><a href="http://127.0.0.1:8000/admin/login/?next=/admin/"><input type="button" value="Admin-site" class="right"></a>
+    <div class="btn-group"><a href="/main_page/"><h2><button>Главная</button></h2></a> <h2><a href="/main_spisok/"><button>Список</button></a></h2> <a href="/news_list/"><h2><button>Новости</button></h2></a></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+</header>
+<center>
+    <div> <h1>Новости для стипендиатов</h1></div>
+ </center>
+<center>
+    {% if news %}
+    {% for i in news %}
+<div style="max-width:1200px;margin-top:100px">
+    <div>
+      <img src="{{i.image.url}}" width="500" height="400">
+      <h3>{{i.title}}</h3>
+      <p>{{i.short}}</p><a href="/news/{{i.id}}"><p>Подробнее</p></a>
+   </div>
+   </div>
+    {% endfor %}
+    {% endif %}
+ </center>
+   <footer>
+
+  </footer>
+
+</body>
+</html>
