@@ -11,6 +11,15 @@ class Student(models.Model):
         ('AIN-2-22', 'AIN-2-22'),
         ('MIN-1-22', 'MIN-1-22'),
         ('WIN-1-22', 'WIN-1-22'),
+        ('AIN-1-21', 'AIN-1-21'),
+        ('AIN-2-21', 'AIN-2-21'),
+        ('MIN-1-21', 'MIN-1-21'),
+        ('WIN-1-21', 'WIN-1-21'),
+        ('AIN-1-20', 'AIN-1-20'),
+        ('MIN-1-20', 'MIN-1-20'),
+        ('WIN-1-20', 'WIN-1-20'),
+        ('AIN-1-19', 'AIN-1-19'),
+
     )
 
     name = models.CharField(max_length=100)

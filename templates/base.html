@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css_final.css">
+    
+    <script src="./filter.js"></script>
+
+    <title>Fixed table</title>
+</head>
+
+<body>
+    <div class="heading">
+    <h1>Dropdown table filter using JavaScript</h1>
+    <!-- <button id="get-unique-values" onclick="getUniqueValuesFromColumn()">Get unique column values</button> -->
+</div>
+    <div class="outer-wrapper">
+    <div class="table-wrapper">
+    <table id="emp-table">
+        <thead>
+            <th col-index = 1>Name</th>
+            <th col-index = 2>Surname</th>
+            <th col-index = 3>Group
+                <select class="table-filter" onchange="filter_rows()">
+                    <option value="all"></option>
+                </select>
+            </th>
+        </thead>
+        <tbody>
+            {% if data %}
+    {% for i in data %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.surname}}</td>
+                <td>{{i.group}}</td>
+            </tr>
+            {% endfor %}
+    {% endif %}
+        </tbody>
+    </table>
+    <!-- <script>getUniqueValuesFromColumn()
+    </script> -->
+    <script>
+        window.onload = () => {
+            console.log(document.querySelector("#emp-table > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
+        };
+
+        getUniqueValuesFromColumn()
+        
+    </script>
+</div>
+</div>
+</body>
+
+</html>

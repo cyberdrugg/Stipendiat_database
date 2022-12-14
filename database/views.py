@@ -31,3 +31,8 @@ def news(request, id):
 def main(request):
     data = models.News.objects.all()
     return render(request, 'main_page.html', {'data': data})
+
+
+def main_new(request):
+    data = models.News.objects.all()
+    return render(request, 'main_new.html', {'data': data})
