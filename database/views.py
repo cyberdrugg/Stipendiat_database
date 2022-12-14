@@ -1,15 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 
 from database import models
-from database.filters import StudentFilter
+from .filters import StudentFilter
 
 
 # Create your views here.
 def spisok(request):
     data = models.Student.objects.all()
-    MyFilter = StudentFilter(request.GET, queryset=data)
-    data = MyFilter.qs
-    context = {'data': data, 'MyFilter': MyFilter}
+    myFilter = StudentFilter(request.GET, queryset=data)
+    data = myFilter.qs
+    context = {'data': data, 'myFilter': myFilter}
     return render(request, 'main_spisok.html', context)
 
 
@@ -36,3 +36,4 @@ def main(request):
 def main_new(request):
     data = models.News.objects.all()
     return render(request, 'main_new.html', {'data': data})
+

@@ -25,7 +25,16 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     image = models.ImageField(upload_to='')
-    group = models.CharField(choices=GROUPS, max_length=100, null=True)
+    group = models.CharField(choices=GROUPS, max_length=500, null=True)
+    phone = models.CharField(max_length=500, null=True)
+    email = models.CharField(max_length=500, null=True)
+    math = models.CharField(max_length=100, null=True)
+    math_logic = models.CharField(max_length=100, null=True)
+    english = models.CharField(max_length=100, null=True)
+    german = models.CharField(max_length=100, null=True)
+    prog_lang = models.CharField(max_length=100, null=True)
+    hci = models.CharField(max_length=100, null=True)
+
 
 
 class News(models.Model):

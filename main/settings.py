@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'database',
+    "django_table_sort",
     'django_filters',
-    "django_table_sort"
 ]
 
 MIDDLEWARE = [
