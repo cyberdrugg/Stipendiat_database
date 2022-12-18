@@ -6,4 +6,4 @@ from .models import *
 class StudentFilter(django_filters.FilterSet):
     class Meta:
         model = Student
-        fields = ['group']
+        fields = ["group"]

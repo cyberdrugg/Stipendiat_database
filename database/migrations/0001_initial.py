@@ -7,18 +7,36 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Student',
+            name="Student",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('surname', models.TextField()),
-                ('image', models.ImageField(upload_to='')),
-                ('group', models.CharField(choices=[('AIN-1-22', 'AIN-1-22'), ('AIN-2-22', 'AIN-2-22'), ('MIN-1-22', 'MIN-1-22'), ('WIN-1-22', 'WIN-1-22')], max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("surname", models.TextField()),
+                ("image", models.ImageField(upload_to="")),
+                (
+                    "group",
+                    models.CharField(
+                        choices=[
+                            ("AIN-1-22", "AIN-1-22"),
+                            ("AIN-2-22", "AIN-2-22"),
+                            ("MIN-1-22", "MIN-1-22"),
+                            ("WIN-1-22", "WIN-1-22"),
+                        ],
+                        max_length=100,
+                    ),
+                ),
             ],
         ),
     ]
