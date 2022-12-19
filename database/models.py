@@ -83,7 +83,7 @@ class Students_19(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=150)
     short = models.CharField(max_length=400)
-    content = models.TextField()
+    content = models.TextField(null=True)
     image = models.ImageField(upload_to="")
 
     def __str__(self):
@@ -92,7 +92,7 @@ class News(models.Model):
 
 class Main_new(models.Model):
     title = models.CharField(max_length=150)
-    link = models.URLField(max_length=500, default=True)
+    link = models.URLField(max_length=500, null=True)
     image = models.ImageField(upload_to="")
 
     def __str__(self):

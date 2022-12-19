@@ -5,9 +5,8 @@ from database.models import models
 from .filters import *
 
 
-# Create your views here.
 def spisok22(request):
-    data = database.models.Students_22.objects.order_by("-average")[:20]
+    data = database.models.Students_22.objects.order_by("-average")
     myFilter = StudentFilter22(request.GET, queryset=data)
     data = myFilter.qs
     context = {"data": data, "myFilter": myFilter}
@@ -23,7 +22,7 @@ def spisok(request):
 
 
 def spisok21(request):
-    data = database.models.Students_21.objects.order_by("average")
+    data = database.models.Students_21.objects.order_by("-average")
     myFilter = StudentFilter21(request.GET, queryset=data)
     data = myFilter.qs
     context = {"data": data, "myFilter": myFilter}
@@ -31,7 +30,7 @@ def spisok21(request):
 
 
 def spisok20(request):
-    data = database.models.Students_20.objects.order_by("average")
+    data = database.models.Students_20.objects.order_by("-average")
     myFilter = StudentFilter20(request.GET, queryset=data)
     data = myFilter.qs
     context = {"data": data, "myFilter": myFilter}
@@ -39,7 +38,7 @@ def spisok20(request):
 
 
 def spisok19(request):
-    data = database.models.Students_19.objects.order_by("average")
+    data = database.models.Students_19.objects.order_by("-average")
     myFilter = StudentFilter19(request.GET, queryset=data)
     data = myFilter.qs
     context = {"data": data, "myFilter": myFilter}
